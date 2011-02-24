@@ -192,7 +192,7 @@
       // Update attributes.
       for (var attr in attrs) {
         var val = attrs[attr];
-        if (!_.isEqual(now[attr], val)) {
+        if (!now.hasOwnProperty(attr) || !_.isEqual(now[attr], val)) {
           now[attr] = val;
           delete escaped[attr];
           this._changed = true;
